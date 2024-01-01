@@ -1,0 +1,55 @@
+.accent {
+    margin-bottom: 38px;
+
+    .accent-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            cursor: povar(--body-font-family);
+            width: 75px;
+            height: 75px;
+        }
+
+        h1 {
+            font-family: var(--body-font-family);
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 82px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: var(--body-text-color);
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-family: var(--body-font-family);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 29px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #A445ED;
+        }
+    }
+}
+
+@media screen and (max-width: 486px) {
+    .accent {
+        .accent-content {
+            img {
+                width: 48px;
+                height: 48px;
+            }
+
+            h1 {
+                font-family: var(--body-font-family);
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+    }
+}
