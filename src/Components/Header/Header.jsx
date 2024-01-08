@@ -46,10 +46,10 @@ class Header extends React.Component {
                             </select>
                         </div>
                         <div className="dark-mode">
-                            <div class="toggle-switch">
-                                <input class="toggle-input" id="toggle" type="checkbox"
+                            <div className="toggle-switch">
+                                <input className="toggle-input" id="toggle" type="checkbox"
                                     onChange={this.toggleMode} />
-                                <label class="toggle-label" for="toggle"></label>
+                                <label className="toggle-label" htmlFor="toggle"></label>
                             </div>
                             <img src={moon} alt="moon" />
                         </div>

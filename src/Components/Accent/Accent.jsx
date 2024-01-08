@@ -9,13 +9,12 @@ class Accent extends React.Component {
     }
     render() {
         const { word, phonetic } = this.props
-        console.log(this.props.audio);
         return (
             <div className="accent">
                 <div className="accent-content">
                     <div className="accent-text">
                         <h1>{word}</h1>
-                        <p>{phonetic}</p>
+                        <p>{phonetic.join(', ')}</p>
                     </div>
                     <div className="play" onClick={this.playAudio}>
                         {!this.props.audio ? <img src={noPlayBtn} alt="play"

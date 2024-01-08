@@ -6,6 +6,13 @@
         align-items: center;
         justify-content: space-between;
 
+        .accent-text {
+            p {
+                width: 100%;
+                max-width: 330px;
+            }
+        }
+
         img {
             cursor: povar(--body-font-family);
             width: 75px;
