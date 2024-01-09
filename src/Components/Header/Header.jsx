@@ -2,7 +2,8 @@ import React from "react";
 import './Header.scss';
 import bookImg from '../../image/book.png';
 import Search from "../Search/Search";
-import moon from '../../image/moon.png';
+import lightSvg from '../../image/light-mode.svg';
+import darkSvg from '../../image/darkSvg.svg';
 class Header extends React.Component {
 
     changeFontFamily(value) {
@@ -23,7 +24,7 @@ class Header extends React.Component {
     }
 
     render() {
-        const { handleSearch, handleSearchSubmit, isLoading, error, searchValue, toggleMode } = this.props;
+        const { handleSearch, handleSearchSubmit, isLoading, error, searchValue, toggleMode, darkMode } = this.props;
         return (
             <>
                 <header className="header container">
@@ -38,13 +39,12 @@ class Header extends React.Component {
                                 <option value="mono">Mono</option>
                             </select>
                         </div>
+                        <div className="line"></div>
                         <div className="dark-mode">
-                            <div className="toggle-switch">
-                                <input className="toggle-input" id="toggle" type="checkbox"
-                                    onChange={toggleMode} />
-                                <label className="toggle-label" htmlFor="toggle"></label>
-                            </div>
-                            <img src={moon} alt="moon" />
+                            {darkMode ?
+                                <img src={darkSvg} alt="darkmoon" onClick={toggleMode} />
+                                : <img src={lightSvg} alt="lightmoon" onClick={toggleMode} />
+                            }
                         </div>
                     </div>
                 </header>

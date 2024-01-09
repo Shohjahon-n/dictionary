@@ -9,7 +9,16 @@
 
     .changers {
         display: flex;
-        gap: 15px;
+        gap: 10px;
+
+        .line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25px;
+            width: 1px;
+            background-color: var(--borders-color);
+        }
 
         select {
             border: none;
@@ -21,7 +30,6 @@
             line-height: 24px;
             letter-spacing: 0px;
             text-align: left;
-            border-right: 1px solid var(--borders-color);
             outline: none;
             width: 100%;
             max-width: 115px;
@@ -45,81 +53,10 @@
             gap: 10px;
 
             img {
-                cursor: povar(--body-font-family);
-                width: 24px;
-                height: 24px;
-                object-fit: contain;
-
-            }
-
-            .toggle-switch {
-                position: relative;
-                display: inline-block;
-                width: 40px;
+                cursor: pointer;
+                width: 80px;
                 height: 20px;
             }
-
-            .toggle-switch .toggle-input {
-                display: none;
-            }
-
-            .toggle-switch .toggle-label {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 40px;
-                height: 24px;
-                background-color: #757575;
-                border-radius: 34px;
-                cursor: povar(--body-font-family);
-                transition: background-color 0.3s;
-            }
-
-            .toggle-switch .toggle-label::before {
-                content: "";
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                top: 2px;
-                left: 2px;
-                background-color: #fff;
-                box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s;
-            }
-
-            .toggle-switch .toggle-input:checked+.toggle-label {
-                background-color: #A445ED;
-            }
-
-            .toggle-switch .toggle-input:checked+.toggle-label::before {
-                transform: translateX(16px);
-            }
-
-            .toggle-switch.light .toggle-label {
-                background-color: #BEBEBE;
-            }
-
-            .toggle-switch.light .toggle-input:checked+.toggle-label {
-                background-color: #9B9B9B;
-            }
-
-            .toggle-switch.light .toggle-input:checked+.toggle-label::before {
-                transform: translateX(6px);
-            }
-
-            .toggle-switch.dark .toggle-label {
-                background-color: #4B4B4B;
-            }
-
-            .toggle-switch.dark .toggle-input:checked+.toggle-label {
-                background-color: #717171;
-            }
-
-            .toggle-switch.dark .toggle-input:checked+.toggle-label::before {
-                transform: translateX(16px);
-            }
-
         }
     }
 }
