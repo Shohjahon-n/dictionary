@@ -10,12 +10,26 @@ class App extends React.Component {
         isLoading: false,
         showResults: false,
         error: '',
-        notFound: false
+        notFound: false,
+        darkMode: false,
+        fontFamily: 'sans-serif'
     }
 
     handleSearch = (e) => {
         this.setState({
             searchValue: e.target.value
+        })
+    }
+
+    toggleMode = () => {
+        this.setState({
+            darkMode: !this.state.darkMode
+        })
+    }
+
+    handleChangeFontFamily = (value) => {
+        this.setState({
+            fontFamily: value
         })
     }
 
@@ -63,18 +77,22 @@ class App extends React.Component {
     }
 
     render() {
+        console.log(this.state.fontFamily);
         return (
-            <>
+            <div className={`big-main ${this.state.darkMode ? 'dark' : ''}  ${this.state.fontFamily}`}>
                 <Header handleSearch={this.handleSearch}
                     handleSearchSubmit={this.handleSearchSubmit}
                     error={this.state.error}
                     searchValue={this.state.searchValue}
+                    darkMode={this.state.darkMode}
+                    toggleMode={this.toggleMode}
+                    handleChangeFontFamily={this.handleChangeFontFamily}
                 />
                 {(this.state.notFound) ? <NotFound /> : null}
                 {(this.state.isLoading) ? <img className="loader" src={loaderSvg} alt="loading" /> :
                     < Main searchResults={this.state.searchResults} showResults={this.state.showResults} />
                 }
-            </>
+            </div>
         );
     }
 }

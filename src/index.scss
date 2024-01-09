@@ -7,6 +7,12 @@
 }
 
 body {
+    overflow-x: hidden;
+}
+
+.big-main {
+    width: 100vw;
+    min-height: 100vh;
     font-family: var(--body-font-family);
     background-color: var(--body-bacground);
 }

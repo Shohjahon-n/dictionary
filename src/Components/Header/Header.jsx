@@ -4,33 +4,26 @@ import bookImg from '../../image/book.png';
 import Search from "../Search/Search";
 import moon from '../../image/moon.png';
 class Header extends React.Component {
-    toggleMode() {
-        document.body.classList.toggle("dark");
-    }
 
     changeFontFamily(value) {
         switch (value) {
             case "sans-serif":
-                document.body.classList.remove("serif", "mono");
-                document.body.classList.add("sans-serif");
+                this.props.handleChangeFontFamily("sans-serif");
                 break;
             case "serif":
-                document.body.classList.remove("sans-serif", "mono");
-                document.body.classList.add("serif");
+                this.props.handleChangeFontFamily("serif");
                 break;
             case "mono":
-                document.body.classList.remove("sans-serif", "serif");
-                document.body.classList.add("mono");
+                this.props.handleChangeFontFamily("mono");
                 break;
             default:
-                document.body.classList.remove("serif", "mono");
-                document.body.classList.add("sans-serif");
+                this.props.handleChangeFontFamily("sans-serif");
                 break;
         }
     }
 
     render() {
-        const { handleSearch, handleSearchSubmit, isLoading, error, searchValue } = this.props;
+        const { handleSearch, handleSearchSubmit, isLoading, error, searchValue, toggleMode } = this.props;
         return (
             <>
                 <header className="header container">
@@ -48,7 +41,7 @@ class Header extends React.Component {
                         <div className="dark-mode">
                             <div className="toggle-switch">
                                 <input className="toggle-input" id="toggle" type="checkbox"
-                                    onChange={this.toggleMode} />
+                                    onChange={toggleMode} />
                                 <label className="toggle-label" htmlFor="toggle"></label>
                             </div>
                             <img src={moon} alt="moon" />
