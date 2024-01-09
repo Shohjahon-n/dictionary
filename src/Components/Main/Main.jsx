@@ -12,8 +12,8 @@ class Main extends React.Component {
                     <div className="main container">
                         <Accent
                             word={searchResults.word}
-                            phonetic={searchResults.phonetics.map((text, idx) => text.text)}
-                            audio={searchResults.phonetics[0].audio}
+                            phonetic={searchResults.phonetics}
+                            audio={searchResults.phonetics.map((aud, idx) => aud.audio)}
                         />
                         <div key={searchResults.word} className="main-content">
                             {searchResults.meanings.map((itm, idx) => (

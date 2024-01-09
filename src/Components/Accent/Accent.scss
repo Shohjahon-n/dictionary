@@ -8,15 +8,23 @@
 
         .accent-text {
             p {
-                width: 100%;
-                max-width: 330px;
+                display: flex;
+                align-items: start;
+                gap: 10px;
             }
         }
 
-        img {
-            cursor: povar(--body-font-family);
-            width: 75px;
-            height: 75px;
+        .play {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+            img {
+                cursor: povar(--body-font-family);
+                width: 75px;
+                height: 75px;
+            }
         }
 
         h1 {
@@ -42,12 +50,36 @@
     }
 }
 
+
+@media screen and (max-width: 768px) {
+    .accent {
+        .accent-content {
+            .accent-text {
+                p {
+                    flex-direction: column;
+                }
+            }
+
+            .play {
+                flex-direction: column;
+
+                img {
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 486px) {
     .accent {
         .accent-content {
-            img {
-                width: 48px;
-                height: 48px;
+            .play {
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
             }
 
             h1 {
