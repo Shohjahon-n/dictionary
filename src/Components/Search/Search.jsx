@@ -9,7 +9,7 @@ class Search extends React.Component {
                 <div className="search-content">
                     <form onSubmit={handleSearchSubmit}>
                         <input
-                            type="text"
+                            type="search"
                             className="search-input"
                             onChange={handleSearch}
                             value={searchValue}
