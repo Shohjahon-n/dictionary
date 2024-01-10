@@ -77,7 +77,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.state.fontFamily);
         return (
             <div className={`big-main ${this.state.darkMode ? 'dark' : ''}  ${this.state.fontFamily}`}>
                 <Header handleSearch={this.handleSearch}
